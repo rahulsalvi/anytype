@@ -1,6 +1,13 @@
 # anytype
 My anytype configuration using tailscale for connectivity.
 
+## Creating config files
+Use [any-sync-network](https://github.com/anyproto/any-sync-tools/tree/main)
+```
+go install github.com/anyproto/any-sync-tools/any-sync-network@latest
+any-sync-network create
+```
+
 ## Running
 ```
 # first time start
