@@ -60,7 +60,7 @@ services:
       retries: 3
 
   any-sync-coordinator-bootstrap:
-    image: ghcr.io/anyproto/any-sync-coordinator:latest
+    image: ghcr.io/anyproto/any-sync-coordinator:prod
     command: ["/bin/any-sync-confapply", "-c", "/etc/any-sync-coordinator/config.yml", "-n", "/etc/any-sync-coordinator/network.yml", "-e"]
     depends_on:
       tailscale:
@@ -73,7 +73,7 @@ services:
     restart: no
 
   any-sync-coordinator:
-    image: ghcr.io/anyproto/any-sync-coordinator:latest
+    image: ghcr.io/anyproto/any-sync-coordinator:prod
     depends_on:
       tailscale:
         condition: service_started
@@ -92,7 +92,7 @@ services:
     restart: unless-stopped
 
   any-sync-filenode:
-    image: ghcr.io/anyproto/any-sync-filenode:latest
+    image: ghcr.io/anyproto/any-sync-filenode:prod
     depends_on:
       tailscale:
         condition: service_started
@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
 
   any-sync-node-1:
-    image: ghcr.io/anyproto/any-sync-node:latest
+    image: ghcr.io/anyproto/any-sync-node:prod
     depends_on:
       tailscale:
         condition: service_started
@@ -132,7 +132,7 @@ services:
     restart: unless-stopped
 
   any-sync-node-2:
-    image: ghcr.io/anyproto/any-sync-node:latest
+    image: ghcr.io/anyproto/any-sync-node:prod
     depends_on:
       tailscale:
         condition: service_started
@@ -150,7 +150,7 @@ services:
     restart: unless-stopped
 
   any-sync-node-3:
-    image: ghcr.io/anyproto/any-sync-node:latest
+    image: ghcr.io/anyproto/any-sync-node:prod
     depends_on:
       tailscale:
         condition: service_started
@@ -168,7 +168,7 @@ services:
     restart: unless-stopped
 
   any-sync-consensusnode:
-    image: ghcr.io/anyproto/any-sync-consensusnode:latest
+    image: ghcr.io/anyproto/any-sync-consensusnode:prod
     depends_on:
       tailscale:
         condition: service_started
