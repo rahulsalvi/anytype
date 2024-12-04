@@ -7,7 +7,7 @@ services:
       - TS_AUTHKEY=file:/run/secrets/ts_authkey
       - TS_HOSTNAME=anytype
       - TS_USERSPACE=false
-    volumes:
+    devices:
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - NET_ADMIN
